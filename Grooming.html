@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<!-- head -->    
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kingwood Pet Resort | An Curated Sanctuary</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols (one link is enough) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind Play CDN (only once) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inline config – required for custom colors to work in browser -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Core from your DESIGN.md & pages
+            primary: '#083642',
+            'primary-container': '#254d59',
+            'on-primary': '#ffffff',
+            'on-primary-container': '#95bdcb',
+
+            secondary: '#516530',
+            'secondary-container': '#d0e9a5',
+            'on-secondary-container': '#556933',
+            'on-secondary': '#ffffff',
+
+            tertiary: '#492b07',
+            'tertiary-container': '#62411c',
+            'on-tertiary-container': '#ddae80',
+            'on-tertiary': '#ffffff',
+
+            background: '#fbf9f8',
+            surface: '#fbf9f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f6f3f2',
+            'surface-container': '#f0eded',
+            'surface-container-high': '#eae8e7',
+            'surface-container-highest': '#e4e2e1',
+
+            'on-surface': '#1b1c1c',
+            'on-surface-variant': '#41484b',
+            'on-background': '#1b1c1c',
+
+            outline: '#71787b',
+            'outline-variant': '#c1c8cb',
+
+            error: '#ba1a1a',
+          },
+          fontFamily: {
+            headline: ['Noto Serif', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            label: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '0.25rem',
+            lg: '0.5rem',
+            xl: '0.75rem',
+            '3xl': '1.5rem',
+            full: '9999px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Your custom style (kept) -->
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow {
+      box-shadow: 0 20px 32px -8px rgba(8, 54, 66, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
+      Kingwood
+      <span class="text-secondary italic">Pet Resort</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="about.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        About Us
+      </a>
+      <a href="grooming.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Grooming
+      </a>
+      <a href="reservations.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Reservations
+      </a>
+      <a href="feedback.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Feedback
+      </a>
+      <a href="contact.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Contact
+      </a>
+    </div>
+
+    <a href="https://kingwoodpetresort.propetware.com/" 
+       class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container 
+              text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 
+              active:scale-[0.98] transition-all duration-200">
+      Book a Stay
+    </a>
+
+    <!-- Mobile menu button (placeholder – we can expand later) -->
+    <button class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+</nav>
+<main class="pt-32 pb-24 overflow-x-hidden">
+<!-- Hero Section: Editorial Layout -->
+<section class="max-w-screen-2xl mx-auto px-12 mb-32">
+<div class="editorial-grid gap-8 items-end">
+<div class="col-span-12 lg:col-span-7">
+<span class="text-secondary font-semibold tracking-widest uppercase text-sm mb-6 block">Artisanal Care</span>
+<h1 class="font-headline text-6xl lg:text-8xl text-primary leading-[1.1] mb-8">Elevated Grooming for the <span class="italic text-secondary">Discerning</span> Companion</h1>
+<p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
+                        At Forest Haven, grooming is more than a service—it’s a sensory retreat. We blend botanical therapies with master-level styling to ensure your pet leaves refreshed, renewed, and radiant.
+                    </p>
+</div>
+<div class="col-span-12 lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low shadow-2xl relative z-10">
+<img alt="Luxury pet spa treatment" class="w-full h-full object-cover" data-alt="Golden retriever enjoying a professional grooming session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdErZTL5JekDfwbLFG76tf4vb4piRc4S3lN5dJEzWxpIbP8dzjLv43kwd52siDFJyMVJ7sYUwSxWwHoR3n0V4XXeDDITY_4fGZMHPji4NQZijB851c_DQTnyHk_p9nX8dHVl2YJjPjeHhLzb3SyzJBXSEVzN90nvvOzsnUGsyLMXqWWFt_ZzgCdk9OGnby4ggj9FzT1_CWHhsFlzg5no_O8JR0ykljf0qs9ooKJ0pwEWsIz68P96RfZsJWkltCGiyRc3jKywrKTQ"/>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Service Menu: Bento Style -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20">
+<h2 class="font-headline text-4xl text-primary mb-4">The Spa Menu</h2>
+<div class="h-1 w-24 bg-tertiary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Full Groom -->
+<div class="bg-surface-container-lowest p-10 rounded-xl flex flex-col h-full border-t-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-primary text-4xl">content_cut</span>
+<span class="text-2xl font-headline text-tertiary">From $85</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-primary">Full Groom</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Our signature transformation. Includes a bespoke haircut, deep-cleansing bath, blow-dry, nail shaping, and ear hygiene.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Botanical Shampoo &amp; Conditioner
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Hand-Scissors Finish
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-surface-container-highest text-primary font-semibold hover:bg-primary-container hover:text-white transition-colors">Select Treatment</button>
+</div>
+<!-- Bath & Brush -->
+<div class="bg-surface-container-lowest p-10 rounded-xl flex flex-col h-full border-t-4 border-secondary shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-secondary text-4xl">soap</span>
+<span class="text-2xl font-headline text-tertiary">From $55</span>
+</div>
+<h3 class="font-headline text-2xl mb-4 text-primary">Bath &amp; Brush</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">A refreshing maintenance session. Ideal for keeping coats healthy and manageable between full stylings.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                De-shedding Treatment
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Scented Finish Spray
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-surface-container-highest text-primary font-semibold hover:bg-primary-container hover:text-white transition-colors">Select Treatment</button>
+</div>
+<!-- Express Services -->
+<div class="bg-primary text-white p-10 rounded-xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-container rounded-full opacity-50"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">magic_button</span>
+<span class="text-2xl font-headline text-tertiary-fixed-dim">From $20</span>
+</div>
+<h3 class="font-headline text-2xl mb-4">Express Care</h3>
+<p class="text-on-primary-container mb-8 flex-grow">Essential maintenance for the busy pet. No appointment needed for walk-in services like nail trims and ear cleaning.</p>
+<div class="space-y-4 mb-10">
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="text-sm">Nail Trims</span>
+<span class="font-bold">$20</span>
+</div>
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="text-sm">Nail Grinding</span>
+<span class="font-bold">$25</span>
+</div>
+<div class="flex justify-between border-b border-on-primary-container/20 pb-2">
+<span class="text-sm">Teeth Brushing</span>
+<span class="font-bold">$15</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-lg bg-secondary text-white font-semibold hover:bg-secondary-container hover:text-on-secondary-container transition-colors">View All Add-ons</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Storytelling: Asymmetric Overlap -->
+<section class="max-w-screen-2xl mx-auto px-12 py-32">
+<div class="grid grid-cols-12 gap-12 items-center">
+<div class="col-span-12 lg:col-span-6 relative">
+<div class="bg-tertiary w-full aspect-video rounded-xl overflow-hidden shadow-xl">
+<img alt="Professional dog grooming" class="w-full h-full object-cover" data-alt="Groomer gently washing a small white dog with bubbles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE1FMsp9iAgipGqJ2c0ynliI8k9jcTMd8geLHF6_pIP8UYmGwH2QuaQIDHtWMHWoB-UNZ4QxokYYmGt99LKD6UrjUat9u4J4Q--ZXP4iRlV3M2lrHXfZdRhHg_CPpv3VUDBQxJe817GND4JfEmxKZUPYH9qidKONJNQzdpJQyq7_NIDRTCvzE5UZTe0iSIeklZo8qQG8A5NJ-iP77Yh5pxwmiOyme1omCwyXsnxLWwVIPPSE9fUj4z2dAxWPkKrXH5VpuCzNrDHQ"/>
+</div>
+<div class="absolute -bottom-20 -right-12 hidden md:block w-72 h-80 bg-surface rounded-xl p-4 shadow-2xl">
+<img alt="Grooming details" class="w-full h-full object-cover rounded-lg" data-alt="Close up of dog grooming scissors and organic shampoo bottles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjN58DrLERY9iRKmhmVy001QYhqdZB0ai65iTqJvxdTmtXhdvcwz8ys64dXBbKcDwTJs67_mWfY3dp5FP3qmjfHL1JS3ou3M54Xb93QCcrnvrwsQ1Mb2tGgdCbAEU1j06ENhiTTNG3L2uwwylzw9debeC5z9cL762i03xVYr7-35pzu8signdW4Pwwanh0DQRmXxRAH_KND83BKrNw28YUKGYG3alt1xzJPIeJU-MMboCnsQQp7r5EPaTSDRKG6FwBOCcrmlrZwA"/>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 lg:col-start-8">
+<h2 class="font-headline text-5xl text-primary mb-8 leading-tight">The <span class="italic">Sanctuary</span> Standard</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Our spa is designed with low-stress principles. Each pet is handled with patience and care, utilizing ergonomic equipment and quiet dryers to minimize anxiety.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">spa</span>
+<div>
+<h4 class="font-bold text-primary">Organic Topicals</h4>
+<p class="text-on-surface-variant text-sm">We exclusively use biodegradable, sulfate-free products formulated for sensitive skin.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">timer</span>
+<div>
+<h4 class="font-bold text-primary">Unrushed Sessions</h4>
+<p class="text-on-surface-variant text-sm">We schedule ample time for breaks and comfort snuggles during every appointment.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-screen-xl mx-auto px-12 mb-32">
+<div class="bg-primary-container rounded-3xl p-16 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-5xl text-white mb-6">Ready for a Paw-fect Day?</h2>
+<p class="text-on-primary-container text-xl mb-10 max-w-2xl mx-auto">Appointments fill quickly. Reserve your pet's transformation today and experience the Forest Haven difference.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-secondary-container transition-colors shadow-xl">
+                            Book Online
+                        </button>
+<button class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-colors">
+                            Call (555) HAVEN-PET
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-teal-950 text-teal-100 w-full mt-auto border-t border-white/10">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+    
+    <!-- Brand & Description -->
+    <div class="md:col-span-2">
+      <div class="font-headline text-2xl font-bold text-white mb-4">
+        Forest Haven Pet Resort
+      </div>
+      <p class="text-teal-200/80 text-base leading-relaxed max-w-md">
+        A curated sanctuary nestled in nature, offering holistic wellness, luxury boarding, and artisanal grooming for your cherished companions.
+      </p>
+      <div class="mt-6 flex gap-5">
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">pets</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">photo_camera</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links Columns -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Resort</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="grooming.html" class="hover:text-white transition-colors">Grooming</a></li>
+          <li><a href="reservations.html" class="hover:text-white transition-colors">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Legal & Bottom -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-teal-200/70 mt-8">
+        © 2025 Forest Haven Pet Resort. All rights reserved.<br/>
+        <span class="inline-flex items-center gap-1 mt-2">
+          <span class="material-symbols-outlined text-sm">eco</span> Sustainable Practices
+        </span>
+        <span class="inline-flex items-center gap-1 ml-4">
+          <span class="material-symbols-outlined text-sm">verified</span> Certified Care
+        </span>
+      </div>
+    </div>
+  </div>
+</footer></body></html>

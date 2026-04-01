@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<!-- head -->    
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kingwood Pet Resort | An Curated Sanctuary</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols (one link is enough) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind Play CDN (only once) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inline config – required for custom colors to work in browser -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Core from your DESIGN.md & pages
+            primary: '#083642',
+            'primary-container': '#254d59',
+            'on-primary': '#ffffff',
+            'on-primary-container': '#95bdcb',
+
+            secondary: '#516530',
+            'secondary-container': '#d0e9a5',
+            'on-secondary-container': '#556933',
+            'on-secondary': '#ffffff',
+
+            tertiary: '#492b07',
+            'tertiary-container': '#62411c',
+            'on-tertiary-container': '#ddae80',
+            'on-tertiary': '#ffffff',
+
+            background: '#fbf9f8',
+            surface: '#fbf9f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f6f3f2',
+            'surface-container': '#f0eded',
+            'surface-container-high': '#eae8e7',
+            'surface-container-highest': '#e4e2e1',
+
+            'on-surface': '#1b1c1c',
+            'on-surface-variant': '#41484b',
+            'on-background': '#1b1c1c',
+
+            outline: '#71787b',
+            'outline-variant': '#c1c8cb',
+
+            error: '#ba1a1a',
+          },
+          fontFamily: {
+            headline: ['Noto Serif', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            label: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '0.25rem',
+            lg: '0.5rem',
+            xl: '0.75rem',
+            '3xl': '1.5rem',
+            full: '9999px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Your custom style (kept) -->
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow {
+      box-shadow: 0 20px 32px -8px rgba(8, 54, 66, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
+      Kingwood
+      <span class="text-secondary italic">Pet Resort</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="about.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        About Us
+      </a>
+      <a href="grooming.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Grooming
+      </a>
+      <a href="reservations.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Reservations
+      </a>
+      <a href="feedback.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Feedback
+      </a>
+      <a href="contact.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Contact
+      </a>
+    </div>
+
+    <a href="https://kingwoodpetresort.propetware.com/" 
+       class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container 
+              text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 
+              active:scale-[0.98] transition-all duration-200">
+      Book a Stay
+    </a>
+
+    <!-- Mobile menu button (placeholder – we can expand later) -->
+    <button class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+<!-- Hero Section Asymmetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-20">
+<div class="lg:col-span-7">
+<h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-primary leading-tight tracking-tight mb-6">
+                    A Sanctuary <br/><span class="italic text-secondary">Awaits</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
+                    Reserve your pet's place in our curated landscape of care. From forest-view suites to artisanal grooming sessions, every detail is crafted for peace.
+                </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow relative z-10">
+<img class="w-full h-full object-cover" data-alt="Golden Retriever relaxing in a luxury resort suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVTO-9y_W88oNbLcOf-fv4-wJf6dg9nF0AmkGgTf55GPfivJ1zZfVlIO9wd21IQAI0ULiS_tKp3aB_TFyZp-_Qn7JztnC5HOAyA3gD_a7-At4o8C79a5SAXVM_DZTV3ILtzxnJl9S-LyBkFOgJxnx4H4Z976yloo_tXFYIPSgAl0IFMgFBWl4MuMT-_KbzaVPIORkxTOCkeBWLcOKiGy28ZpThiC5wGTCSJBndmROUmLpOsr6_57RA-vCo4Cq76Df6XmQrx8YDA"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary-container rounded-xl -z-10 opacity-50"></div>
+</div>
+</div>
+<!-- Booking Interface -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Selection -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Step 1: Pet Identity -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline text-3xl text-primary">Pet Details</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-outline px-1">Pet Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant" placeholder="e.g. Luna" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-outline px-1">Species</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface">
+<option>Canine</option>
+<option>Feline</option>
+<option>Other Small Companion</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Step 2: Service Selection Bento -->
+<section class="bg-surface p-1 rounded-xl">
+<div class="flex items-center gap-4 mb-8 px-7 pt-7">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline text-3xl text-primary">Choose Experience</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+<!-- Boarding -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/10 transition-all cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="bed">bed</span>
+<h3 class="font-headline text-xl text-primary mb-2">Luxury Boarding</h3>
+<p class="text-sm text-on-surface-variant mb-6">Private suites with climate control and soothing music.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">From $85</span>
+<span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+<!-- Daycare -->
+<div class="group relative bg-primary text-on-primary p-6 rounded-xl cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-on-primary-container mb-4" data-icon="park">park</span>
+<h3 class="font-headline text-xl mb-2">Day Kamp</h3>
+<p class="text-sm text-on-primary-container mb-6">Full day of supervised social play in our private park.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold">From $45</span>
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Grooming -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/10 transition-all cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4" data-icon="spa">spa</span>
+<h3 class="font-headline text-xl text-primary mb-2">Artisan Groom</h3>
+<p class="text-sm text-on-surface-variant mb-6">Organic shampoos and breed-specific styling therapy.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">From $60</span>
+<span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Schedule -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">3</span>
+<h2 class="font-headline text-3xl text-primary">Dates &amp; Times</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="block text-sm font-semibold uppercase tracking-wider text-outline">Check In</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface" type="date"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block text-sm font-semibold uppercase tracking-wider text-outline">Check Out</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface" type="date"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Sticky Card -->
+<div class="lg:col-span-1">
+<div class="sticky top-32 bg-white rounded-xl editorial-shadow overflow-hidden border border-outline-variant/10">
+<div class="p-8 border-b border-surface-container">
+<h3 class="font-headline text-2xl text-primary mb-1">Stay Summary</h3>
+<p class="text-on-surface-variant text-sm">Review your pet's itinerary</p>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Day Kamp Package</p>
+<p class="text-xs text-on-surface-variant">Social play + Snack bar</p>
+</div>
+<span class="font-medium text-primary">$45.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Organic Spa Session</p>
+<p class="text-xs text-on-surface-variant">Chamomile bath &amp; nail trim</p>
+</div>
+<span class="font-medium text-primary">$60.00</span>
+</div>
+<div class="pt-6 border-t border-surface-container flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest text-outline">Subtotal</p>
+<p class="text-3xl font-headline text-primary">$105.00</p>
+</div>
+<p class="text-xs text-on-surface-variant pb-1">excl. taxes</p>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-xl font-bold text-lg hover:opacity-90 transition-all active:scale-[0.98]">
+                            Confirm Reservation
+                        </button>
+<div class="flex items-center gap-3 justify-center text-secondary text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                            Secure Boutique Booking
+                        </div>
+</div>
+<div class="bg-surface-container-low p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="Friendly resort concierge staff member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3VMI5ReqjFgfDRRiQxcr8C81KLB8wQUX-WBsZqYWp8kGsgMJ02QprAJ_zyBj2RP1mxJZAVUaJV2AKgmUouKrOSGNd5CAcjmugH0e-Rp0xAQ_uin4_gYLS_0Xg54FVrqy5TLbTGZRkh1F6aoekx8gO71ebuu7ZkZSVFvmivnJis5U0U9hC-HfNQT5o2eUmiUtD7_lFZQfYVlKZOBrMqVL-bnvbT8kyP6rXQ3YubfgPrzvc0weDuVnIgpcW94aYirkUsaCQHIPt6A"/>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">
+                            "I'll be personally managing Luna's check-in on Friday. We can't wait!" <br/><strong>— Sarah, Concierge</strong>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-teal-950 text-teal-100 w-full mt-auto border-t border-white/10">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+    
+    <!-- Brand & Description -->
+    <div class="md:col-span-2">
+      <div class="font-headline text-2xl font-bold text-white mb-4">
+        Forest Haven Pet Resort
+      </div>
+      <p class="text-teal-200/80 text-base leading-relaxed max-w-md">
+        A curated sanctuary nestled in nature, offering holistic wellness, luxury boarding, and artisanal grooming for your cherished companions.
+      </p>
+      <div class="mt-6 flex gap-5">
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">pets</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">photo_camera</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links Columns -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Resort</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="grooming.html" class="hover:text-white transition-colors">Grooming</a></li>
+          <li><a href="reservations.html" class="hover:text-white transition-colors">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Legal & Bottom -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-teal-200/70 mt-8">
+        © 2025 Forest Haven Pet Resort. All rights reserved.<br/>
+        <span class="inline-flex items-center gap-1 mt-2">
+          <span class="material-symbols-outlined text-sm">eco</span> Sustainable Practices
+        </span>
+        <span class="inline-flex items-center gap-1 ml-4">
+          <span class="material-symbols-outlined text-sm">verified</span> Certified Care
+        </span>
+      </div>
+    </div>
+  </div>
+</footer></body></html>

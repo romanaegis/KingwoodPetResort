@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<!-- head -->    
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kingwood Pet Resort | An Curated Sanctuary</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols (one link is enough) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind Play CDN (only once) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inline config – required for custom colors to work in browser -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Core from your DESIGN.md & pages
+            primary: '#083642',
+            'primary-container': '#254d59',
+            'on-primary': '#ffffff',
+            'on-primary-container': '#95bdcb',
+
+            secondary: '#516530',
+            'secondary-container': '#d0e9a5',
+            'on-secondary-container': '#556933',
+            'on-secondary': '#ffffff',
+
+            tertiary: '#492b07',
+            'tertiary-container': '#62411c',
+            'on-tertiary-container': '#ddae80',
+            'on-tertiary': '#ffffff',
+
+            background: '#fbf9f8',
+            surface: '#fbf9f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f6f3f2',
+            'surface-container': '#f0eded',
+            'surface-container-high': '#eae8e7',
+            'surface-container-highest': '#e4e2e1',
+
+            'on-surface': '#1b1c1c',
+            'on-surface-variant': '#41484b',
+            'on-background': '#1b1c1c',
+
+            outline: '#71787b',
+            'outline-variant': '#c1c8cb',
+
+            error: '#ba1a1a',
+          },
+          fontFamily: {
+            headline: ['Noto Serif', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            label: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '0.25rem',
+            lg: '0.5rem',
+            xl: '0.75rem',
+            '3xl': '1.5rem',
+            full: '9999px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Your custom style (kept) -->
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow {
+      box-shadow: 0 20px 32px -8px rgba(8, 54, 66, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
+      Kingwood
+      <span class="text-secondary italic">Pet Resort</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="about.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        About Us
+      </a>
+      <a href="grooming.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Grooming
+      </a>
+      <a href="reservations.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Reservations
+      </a>
+      <a href="feedback.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Feedback
+      </a>
+      <a href="contact.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Contact
+      </a>
+    </div>
+
+    <a href="https://kingwoodpetresort.propetware.com/" 
+       class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container 
+              text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 
+              active:scale-[0.98] transition-all duration-200">
+      Book a Stay
+    </a>
+
+    <!-- Mobile menu button (placeholder – we can expand later) -->
+    <button class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: The Organic Curated Sanctuary -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden px-12 py-20">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover" data-alt="Sunlight filtering through deep green forest canopy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWySpbicJyQ7TlA4HgTi-hbTkQ71o2QHXhRS5DtxDIh3eoszrXi9xW3jMXJUyhzvT5uB-GBE2xB1DRs3khP91wRSdI2p_Ty3NZuYMD2Zs5tglSzwCwW2XVlaX01QyM8FKlEE2AW6AVohec-sKvagbtF80EKZfGbPTrOiG0ruLxpQxUE5hH5XxF2oVFucTQXHx7kExY65fL48Tm10w1N4CbRbXKp8R6_y9f3GHt8T4ZXT3RcJV16QPqu37eHn8ZHnCtnjq5fRGyFg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-sm font-semibold tracking-wider mb-6">ESTABLISHED 2008</span>
+<h1 class="font-headline text-6xl md:text-8xl text-white leading-tight mb-8">
+                    An Organic <br/>
+<span class="italic font-normal">Curated Sanctuary</span>
+</h1>
+<p class="font-body text-xl text-white/90 max-w-2xl leading-relaxed">
+                    Where the whispering pines meet premier hospitality. We've redefined pet boarding as a holistic, high-end experience rooted in the tranquility of nature.
+                </p>
+</div>
+</section>
+<!-- The Story: Asymmetric Editorial Layout -->
+<section class="max-w-screen-2xl mx-auto px-12 py-32 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 space-y-8">
+<h2 class="font-headline text-4xl text-primary leading-tight">Our Philosophy of <br/>Gentle Stewardship</h2>
+<div class="w-20 h-1 bg-tertiary"></div>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    Forest Haven began with a single vision: to create a space where pets don't just stay, but thrive. We believe that an animal's environment directly impacts their emotional well-being.
+                </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                    By integrating natural textures, sun-drenched private suites, and curated forest walks, we provide a sanctuary that mirrors the freedom of the wild with the security of a luxury estate.
+                </p>
+</div>
+<div class="md:col-span-7 relative">
+<div class="grid grid-cols-2 gap-4">
+<div class="pt-20">
+<img alt="" class="rounded-xl shadow-xl w-full h-[400px] object-cover" data-alt="Happy golden retriever running through lush green grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGHnCMvJAtZC-QDIB-lt-ucXn--dxSejMNjpLPf3U4-t84HLcYXPb_XX_oZsnog_YePuwdAo5Bdz2J-qbT7dWOtBGUqeUnC0JhIZMLLm7wm5KqDvADlLfM6zQn9ceYVe7isQM-69JRkl6O3VjBW4lQTv8ozDkf9p3VS17NmKTcweH8mNP0chjyy8ybjMI5KFv_XYYdvZuR-Pb2rDmb7kVRlLrh8GaWKmFCAnZ-TIsT0im2msSLCvOu7pXoOZH1rlFL5QrheExOVw"/>
+</div>
+<div>
+<img alt="" class="rounded-xl shadow-xl w-full h-[500px] object-cover" data-alt="Close up of a calm cat resting in a high-end pet suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItc0pXxLzi-yIqzF0CAm6rOHZDS1S_7M8nIvPsVbKgCngLo0GjtnMzYZfUFhAT7BG6uJvE9iZbd96GIrY68FmkOQp1xks8Cpg0cgcQ1TZRwtV8Zk8oZc7u8aYawG77GAu7Cb3WawrIlGPfu7Onf0hFLsZNmEekTPyDByWs46GPyH03jjbrr_9ktd0zKdyIhx_UKXBiBtGzBtf4YmyXHkEzuc2THYn6-xh7M7BG3RazM_iM2-zYp3i9TTLqhD4ydoDUD1pCBUhSQ"/>
+</div>
+</div>
+<!-- Glass Card Floating -->
+<div class="absolute -bottom-8 -left-8 bg-white/80 glass-effect p-8 rounded-xl shadow-lg max-w-xs border border-white/20">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="nature_people">nature_people</span>
+<h4 class="font-headline text-xl text-primary mb-2">Acreage to Explore</h4>
+<p class="text-sm text-on-surface-variant">Over 15 acres of private, fenced woodland trails for guided scent-work and exploration.</p>
+</div>
+</div>
+</section>
+<!-- Facilities: Bento Grid Layout -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="text-center mb-20">
+<h2 class="font-headline text-5xl text-primary mb-4">The Resort Grounds</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Every corner of Forest Haven is designed for sensory enrichment and sophisticated comfort.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[700px]">
+<div class="md:col-span-2 md:row-span-2 bg-white rounded-xl overflow-hidden group relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Architectural view of luxury indoor pet play area with wooden finishings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzMa2UunHpo8OQ1BG_1Q9_DFnufNH0tOAvW3ngHynKF9r_q__sKbdcJICxkUaIVrG8cZWbeb67O5I1owh4X3BfvKnEfA03XdnloHGHp2dOZEi2j2Jc5F6cGrhs5rODV6LQUZqlDI1iKNriZzAdZbEuh--Fb6fngAoPaU1UepEonKDZn_CUeYyADtMfaJSH6Q6oO3VSpqJZbRO4pwvHMNuLAyGzoRjVAOyIH3iPDWVB4yi3jimbSO7cEuAX93vU7GMBbld7rv_ucw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<h3 class="text-2xl font-headline">The Timber Atrium</h3>
+<p class="text-white/80">Indoor-outdoor play space with climate-controlled heated floors.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-white rounded-xl overflow-hidden group relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Two small dogs playing on high-end rubberized outdoor playground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHT7fMlNDn8TyGq4X-iDFEOiJASVhYKRduMoF4HiWakNchKCBA8I5AYiHBLMTy-avJBabWB6gi5m8TVUyirHQkThgUrMH0SOomJqK6X5CXxVHVLBraA7BhDGLqZfZk4axqwrqsT0OUFwiyvm9FCMDbCGuhaaCme1ZdsX656yoLDPnlQFZxHR6ZOEnVG4K_ILD3n8Lf-jpI-UfmBbJoC9STvo50HmWFTAt2EjikffTJEx1KtmVjcvmQJhfva4n_QHBL9olgrGJh4w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 p-8 text-white">
+<h3 class="text-2xl font-headline">The Bark Park</h3>
+<p class="text-white/80">Social zones filtered by size and temperament.</p>
+</div>
+</div>
+<div class="md:col-span-1 bg-white rounded-xl overflow-hidden group relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern pet grooming spa area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlWgYZ2c0kBPP0g-THMhPwLda6EBUkC-R4ATohnrIpgEBowlCm8rr-ajUtNfaDFJm0vcqzpzpMNkK6o-o03BW411sEwjyabOHeKbyzL2UCSRV1XlirWq7lHGxU_vkhqPJ3i4VyqkVz5Mil10T7yKFxUXLYIF8daysOR0JMDgM3yIe_i2e16-4_44RMY16uPulbJ9pChGniY5mlyxQKk627t8Qqqmf-vGJj6E9CziOH5QL6aML0InIYyO8XbW2AATGNwg7pBwEIMQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 p-6 text-white">
+<h3 class="text-xl font-headline">The Zen Spa</h3>
+</div>
+</div>
+<div class="md:col-span-1 bg-white rounded-xl overflow-hidden group relative">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Individual modern cat suite with multi-level climbing shelves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcZDGT6BZsnt6CXfm6o0u6Cs-OGAr6GOdtFhJIEw0VuBPzeomaiFk7xonOi_kZ-7lHKy9mYlxmzWksYg074Kg4SmeBo2fMYknCmBXzoJ6WbBCykE1sG-bvqi_LJtEVx6e8-zoW1I3CRzuPYt8m0PaxeEdT01dWZKdUGUmjLR7VBIH1Sk38rX_Kyvkvh8NCjVgutHMizij920Jt7RNJkh0pUWgyEvsQOW9tIWDNtsP9jPqUQV-L25buEClfHH3vL4Ia_jKfP7zhIA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-0 p-6 text-white">
+<h3 class="text-xl font-headline">The Feline Lounge</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Team: Expert Professionals -->
+<section class="max-w-screen-2xl mx-auto px-12 py-32">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-5xl text-primary mb-6">The Guardians</h2>
+<p class="text-on-surface-variant text-lg">Our team isn't just pet lovers; they are behaviorists, certified handlers, and wellness advocates dedicated to the highest standards of care.</p>
+</div>
+<button class="text-primary font-semibold flex items-center gap-2 group">
+                    View Careers 
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Team Member 1 -->
+<div class="space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a female pet behaviorist in professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYW1ffisujIUCLE22hIeN-WvLRSYkKIkvlmle7GDXRvbTQuIONyt3hbjUTckspPVQICmMC9P3hHj2FI8b5FAo8uyojbWZToMPRT95qWNOkLb2lc9yeAsSnZwQc-ntDIE9YABHm3C8aiWlUyQICH9dvJzVFqj-tpFryB0DageajXiiCKyJ5JUgxes24At6353lT7YED7IvQy4UT0UAE7WltbcE9r47PG96Utm_f45x5JlyhxEmkwdwCd0V58MK3O8eYGNhAcSQQRA"/>
+</div>
+<div>
+<h4 class="font-headline text-2xl text-primary">Dr. Sarah Thorne</h4>
+<p class="text-secondary font-medium tracking-wide text-sm uppercase mb-3">Founder &amp; Chief Behaviorist</p>
+<p class="text-on-surface-variant">PhD in Animal Ethology with 15 years experience in luxury pet care development.</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a male lead trainer smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAerdYuVjGharZwrP1JwFzIypdZUqGKMX5nPzVyVVmgdp6NroxjIjywzQdgpVsEMXZ9-MUyIBGp-KIDX5JUG7lfeB1LSxwOZJ8Rt_MsstAgSZeb3RVPx5tremW7l23qX7ejrW8CTMkgpiDBd--OWKLqpdgsxTDKzQlJYjS006C9JSQIwbzri6iaXlpfpoAnadjh9oFgaSFAO65Hj3G7WH8jHaDbJcUwHUP6qJmrWnY4Babsd3ny-rDRdL5sCjDAjlwufIHvKtv1bQ"/>
+</div>
+<div>
+<h4 class="font-headline text-2xl text-primary">Marcus Vance</h4>
+<p class="text-secondary font-medium tracking-wide text-sm uppercase mb-3">Head of Training</p>
+<p class="text-on-surface-variant">Certified master trainer specializing in gentle positive reinforcement and social integration.</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a female lead groomer with artistic hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDecD9xsepJhyPlqJ056rsFtq3EIV6GCSRP94GSx4rrYT8tz3vjLz7NJ5k05Ki72kELl36oSTksBsunmh2WwH-dzXOXKYL1ZAQ7dDskROwLq-aFeGhkWek1XCbZRAIUExqwD94CDZGWkX4_UAgLKgcIGFBny72e6UWJRg7oFSBQxo5KRCZc8PSDVsMnMyVlDvCf7JV2JJIC55kCt-XqL7mqvGVt3or0sMURWCBYcwszpKkv6Rt0qjhDWYbqoSshrciaYuBBJGf80g"/>
+</div>
+<div>
+<h4 class="font-headline text-2xl text-primary">Elena Rodriguez</h4>
+<p class="text-secondary font-medium tracking-wide text-sm uppercase mb-3">Spa Director</p>
+<p class="text-on-surface-variant">Award-winning stylistic groomer focusing on stress-free spa treatments and aromatherapy.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-screen-2xl mx-auto px-12 pb-32">
+<div class="bg-primary-container rounded-[2rem] p-16 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 space-y-8 max-w-3xl mx-auto">
+<h2 class="font-headline text-4xl md:text-5xl text-white">Experience the Forest Haven Difference</h2>
+<p class="text-on-primary-container text-lg leading-relaxed">
+                        Ready to book your pet's first retreat? Join our community of discerning pet owners who prioritize peace of mind and premium care.
+                    </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center pt-8">
+<button class="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-colors">
+                            Book a Consultation
+                        </button>
+<button class="border border-on-primary-container text-white px-10 py-4 rounded-xl font-bold hover:bg-white/5 transition-colors">
+                            Take a Virtual Tour
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-teal-950 text-teal-100 w-full mt-auto border-t border-white/10">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+    
+    <!-- Brand & Description -->
+    <div class="md:col-span-2">
+      <div class="font-headline text-2xl font-bold text-white mb-4">
+        Forest Haven Pet Resort
+      </div>
+      <p class="text-teal-200/80 text-base leading-relaxed max-w-md">
+        A curated sanctuary nestled in nature, offering holistic wellness, luxury boarding, and artisanal grooming for your cherished companions.
+      </p>
+      <div class="mt-6 flex gap-5">
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">pets</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">photo_camera</span>
+        </a>
+        <a href="#" class="text-teal-300 hover:text-white transition-colors">
+          <span class="material-symbols-outlined text-2xl">mail</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links Columns -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Resort</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="grooming.html" class="hover:text-white transition-colors">Grooming</a></li>
+          <li><a href="reservations.html" class="hover:text-white transition-colors">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Company</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Legal & Bottom -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="text-sm text-teal-200/70 mt-8">
+        © 2025 Forest Haven Pet Resort. All rights reserved.<br/>
+        <span class="inline-flex items-center gap-1 mt-2">
+          <span class="material-symbols-outlined text-sm">eco</span> Sustainable Practices
+        </span>
+        <span class="inline-flex items-center gap-1 ml-4">
+          <span class="material-symbols-outlined text-sm">verified</span> Certified Care
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body></html>

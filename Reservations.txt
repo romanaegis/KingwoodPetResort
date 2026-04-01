@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#254d59",
+                        "on-secondary-fixed": "#121f00",
+                        "tertiary-fixed": "#ffdcbd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#c0e9f8",
+                        "surface-variant": "#e4e2e1",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed-dim": "#a5cddb",
+                        "on-surface-variant": "#41484b",
+                        "on-surface": "#1b1c1c",
+                        "on-primary-fixed-variant": "#244c58",
+                        "secondary-fixed": "#d3eba8",
+                        "on-tertiary-fixed": "#2c1600",
+                        "surface-bright": "#fbf9f8",
+                        "outline-variant": "#c1c8cb",
+                        "on-secondary-fixed-variant": "#3a4d1a",
+                        "inverse-on-surface": "#f3f0f0",
+                        "secondary": "#516530",
+                        "primary": "#083642",
+                        "outline": "#71787b",
+                        "surface-tint": "#3d6470",
+                        "secondary-fixed-dim": "#b7cf8e",
+                        "inverse-primary": "#a5cddb",
+                        "tertiary": "#492b07",
+                        "background": "#fbf9f8",
+                        "tertiary-container": "#62411c",
+                        "secondary-container": "#d0e9a5",
+                        "on-tertiary-fixed-variant": "#61401b",
+                        "on-primary-fixed": "#001f27",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1c",
+                        "surface-container-high": "#eae8e7",
+                        "on-primary-container": "#95bdcb",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fbf9f8",
+                        "on-tertiary-container": "#ddae80",
+                        "surface-container": "#f0eded",
+                        "on-secondary-container": "#556933",
+                        "tertiary-fixed-dim": "#eebd8e",
+                        "surface-container-highest": "#e4e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 32px -12px rgba(8, 54, 66, 0.06);
+        }
+        .glass-panel {
+            background: rgba(251, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl font-bold text-teal-950 dark:text-teal-50">Forest Haven Pet Resort</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-900 dark:hover:text-teal-200 transition-colors font-serif text-lg tracking-tight" href="#">About Us</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-900 dark:hover:text-teal-200 transition-colors font-serif text-lg tracking-tight" href="#">Grooming</a>
+<a class="text-teal-700 dark:text-teal-400 font-semibold border-b-2 border-teal-700 dark:border-teal-400 pb-1 font-serif text-lg tracking-tight" href="#">Reservations</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-900 dark:hover:text-teal-200 transition-colors font-serif text-lg tracking-tight" href="#">Feedback</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-900 dark:hover:text-teal-200 transition-colors font-serif text-lg tracking-tight" href="#">Contacts</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-3 rounded-xl font-medium hover:opacity-80 transition-opacity active:scale-[0.98]">
+                Book a Stay
+            </button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+<!-- Hero Section Asymmetry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-20">
+<div class="lg:col-span-7">
+<h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-primary leading-tight tracking-tight mb-6">
+                    A Sanctuary <br/><span class="italic text-secondary">Awaits</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
+                    Reserve your pet's place in our curated landscape of care. From forest-view suites to artisanal grooming sessions, every detail is crafted for peace.
+                </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden editorial-shadow relative z-10">
+<img class="w-full h-full object-cover" data-alt="Golden Retriever relaxing in a luxury resort suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVTO-9y_W88oNbLcOf-fv4-wJf6dg9nF0AmkGgTf55GPfivJ1zZfVlIO9wd21IQAI0ULiS_tKp3aB_TFyZp-_Qn7JztnC5HOAyA3gD_a7-At4o8C79a5SAXVM_DZTV3ILtzxnJl9S-LyBkFOgJxnx4H4Z976yloo_tXFYIPSgAl0IFMgFBWl4MuMT-_KbzaVPIORkxTOCkeBWLcOKiGy28ZpThiC5wGTCSJBndmROUmLpOsr6_57RA-vCo4Cq76Df6XmQrx8YDA"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary-container rounded-xl -z-10 opacity-50"></div>
+</div>
+</div>
+<!-- Booking Interface -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Selection -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Step 1: Pet Identity -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline text-3xl text-primary">Pet Details</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-outline px-1">Pet Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant" placeholder="e.g. Luna" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold uppercase tracking-wider text-outline px-1">Species</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface">
+<option>Canine</option>
+<option>Feline</option>
+<option>Other Small Companion</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Step 2: Service Selection Bento -->
+<section class="bg-surface p-1 rounded-xl">
+<div class="flex items-center gap-4 mb-8 px-7 pt-7">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline text-3xl text-primary">Choose Experience</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+<!-- Boarding -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/10 transition-all cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="bed">bed</span>
+<h3 class="font-headline text-xl text-primary mb-2">Luxury Boarding</h3>
+<p class="text-sm text-on-surface-variant mb-6">Private suites with climate control and soothing music.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">From $85</span>
+<span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+<!-- Daycare -->
+<div class="group relative bg-primary text-on-primary p-6 rounded-xl cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-on-primary-container mb-4" data-icon="park">park</span>
+<h3 class="font-headline text-xl mb-2">Day Kamp</h3>
+<p class="text-sm text-on-primary-container mb-6">Full day of supervised social play in our private park.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold">From $45</span>
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Grooming -->
+<div class="group relative bg-surface-container-lowest p-6 rounded-xl border border-transparent hover:border-primary/10 transition-all cursor-pointer editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4" data-icon="spa">spa</span>
+<h3 class="font-headline text-xl text-primary mb-2">Artisan Groom</h3>
+<p class="text-sm text-on-surface-variant mb-6">Organic shampoos and breed-specific styling therapy.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">From $60</span>
+<span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Schedule -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold">3</span>
+<h2 class="font-headline text-3xl text-primary">Dates &amp; Times</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<label class="block text-sm font-semibold uppercase tracking-wider text-outline">Check In</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface" type="date"/>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block text-sm font-semibold uppercase tracking-wider text-outline">Check Out</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 px-5 focus:ring-2 focus:ring-primary/20 text-on-surface" type="date"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Sticky Card -->
+<div class="lg:col-span-1">
+<div class="sticky top-32 bg-white rounded-xl editorial-shadow overflow-hidden border border-outline-variant/10">
+<div class="p-8 border-b border-surface-container">
+<h3 class="font-headline text-2xl text-primary mb-1">Stay Summary</h3>
+<p class="text-on-surface-variant text-sm">Review your pet's itinerary</p>
+</div>
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Day Kamp Package</p>
+<p class="text-xs text-on-surface-variant">Social play + Snack bar</p>
+</div>
+<span class="font-medium text-primary">$45.00</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Organic Spa Session</p>
+<p class="text-xs text-on-surface-variant">Chamomile bath &amp; nail trim</p>
+</div>
+<span class="font-medium text-primary">$60.00</span>
+</div>
+<div class="pt-6 border-t border-surface-container flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest text-outline">Subtotal</p>
+<p class="text-3xl font-headline text-primary">$105.00</p>
+</div>
+<p class="text-xs text-on-surface-variant pb-1">excl. taxes</p>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-xl font-bold text-lg hover:opacity-90 transition-all active:scale-[0.98]">
+                            Confirm Reservation
+                        </button>
+<div class="flex items-center gap-3 justify-center text-secondary text-sm font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+                            Secure Boutique Booking
+                        </div>
+</div>
+<div class="bg-surface-container-low p-6 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="Friendly resort concierge staff member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3VMI5ReqjFgfDRRiQxcr8C81KLB8wQUX-WBsZqYWp8kGsgMJ02QprAJ_zyBj2RP1mxJZAVUaJV2AKgmUouKrOSGNd5CAcjmugH0e-Rp0xAQ_uin4_gYLS_0Xg54FVrqy5TLbTGZRkh1F6aoekx8gO71ebuu7ZkZSVFvmivnJis5U0U9hC-HfNQT5o2eUmiUtD7_lFZQfYVlKZOBrMqVL-bnvbT8kyP6rXQ3YubfgPrzvc0weDuVnIgpcW94aYirkUsaCQHIPt6A"/>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">
+                            "I'll be personally managing Luna's check-in on Friday. We can't wait!" <br/><strong>— Sarah, Concierge</strong>
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-teal-950 dark:bg-slate-950 w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 max-w-screen-2xl mx-auto items-center">
+<div>
+<div class="font-serif text-xl font-bold text-white mb-4">Forest Haven Pet Resort</div>
+<p class="text-teal-100/70 dark:text-slate-400 font-sans text-sm tracking-wide max-w-sm">
+                    Elevating the standard of pet care through intentional design and natural harmony. A retreat for the soul of your companion.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex gap-8">
+<a class="text-teal-100/70 dark:text-slate-400 font-sans text-sm tracking-wide hover:text-teal-300 dark:hover:text-teal-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-teal-100/70 dark:text-slate-400 font-sans text-sm tracking-wide hover:text-teal-300 dark:hover:text-teal-400 transition-colors" href="#">Terms of Service</a>
+<a class="text-teal-100/70 dark:text-slate-400 font-sans text-sm tracking-wide hover:text-teal-300 dark:hover:text-teal-400 transition-colors" href="#">Careers</a>
+<a class="text-teal-100/70 dark:text-slate-400 font-sans text-sm tracking-wide hover:text-teal-300 dark:hover:text-teal-400 transition-colors" href="#">Sustainability</a>
+</div>
+<div class="text-white dark:text-slate-200 font-sans text-sm tracking-wide">
+                    © 2024 Forest Haven Pet Resort. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

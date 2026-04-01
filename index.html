@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<!-- head -->    
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kingwood Pet Resort | An Curated Sanctuary</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Material Symbols (one link is enough) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind Play CDN (only once) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inline config – required for custom colors to work in browser -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Core from your DESIGN.md & pages
+            primary: '#083642',
+            'primary-container': '#254d59',
+            'on-primary': '#ffffff',
+            'on-primary-container': '#95bdcb',
+
+            secondary: '#516530',
+            'secondary-container': '#d0e9a5',
+            'on-secondary-container': '#556933',
+            'on-secondary': '#ffffff',
+
+            tertiary: '#492b07',
+            'tertiary-container': '#62411c',
+            'on-tertiary-container': '#ddae80',
+            'on-tertiary': '#ffffff',
+
+            background: '#fbf9f8',
+            surface: '#fbf9f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f6f3f2',
+            'surface-container': '#f0eded',
+            'surface-container-high': '#eae8e7',
+            'surface-container-highest': '#e4e2e1',
+
+            'on-surface': '#1b1c1c',
+            'on-surface-variant': '#41484b',
+            'on-background': '#1b1c1c',
+
+            outline: '#71787b',
+            'outline-variant': '#c1c8cb',
+
+            error: '#ba1a1a',
+          },
+          fontFamily: {
+            headline: ['Noto Serif', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            label: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '0.25rem',
+            lg: '0.5rem',
+            xl: '0.75rem',
+            '3xl': '1.5rem',
+            full: '9999px',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Your custom style (kept) -->
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow {
+      box-shadow: 0 20px 32px -8px rgba(8, 54, 66, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
+      Kingwood
+      <span class="text-secondary italic">Pet Resort</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="about.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        About Us
+      </a>
+      <a href="grooming.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Grooming
+      </a>
+      <a href="reservations.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Reservations
+      </a>
+      <a href="feedback.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Feedback
+      </a>
+      <a href="contact.html" 
+         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
+                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
+        Contact
+      </a>
+    </div>
+
+    <a href="https://kingwoodpetresort.propetware.com/" 
+       class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container 
+              text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 
+              active:scale-[0.98] transition-all duration-200">
+      Book a Stay
+    </a>
+
+    <!-- Mobile menu button (placeholder – we can expand later) -->
+    <button class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-230.25 flex items-center overflow-hidden px-8 py-20">
+<div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10 relative">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-sm font-semibold mb-6" leading loose>
+  <p>THE COLMENARES FAMILY</p>
+  <p>ESTABLISHED LUXURY CARE SINCE 1979</p>
+</div>
+<h1 class="font-headline text-5xl lg:text-7xl text-primary leading-[1.1] mb-8">A sanctuary where your pets <span class="italic text-secondary">truly belong.</span></h1>
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-md mb-10 leading-relaxed">Exquisite boutique pet boarding with large climate control suites, private outdoor runs, 24-hour web access, and expert grooming in a lush, peaceful environment designed for ultimate comfort.</p>
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-md mb-10 leading-relaxed">We started Kingwood Kennels with 10 kennels. We are no longer just a kennel; we are a pet resort with 30 indoor and outdoor runs, 10 luxury suites, and 24-hour webcam access for pet owners. Everything is climate-controlled and designed for pet safety and comfort. </p>
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-md mb-10 leading-relaxed">Established in 1979, we were the very first pet care facility in Kingwood</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button 
+  class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl text-lg font-semibold transition-transform hover:scale-105"
+  onclick="window.location.href='https://kingwoodpetresort.propetware.com/'">
+  Book Their Stay
+</button>
+<button 
+  class="bg-surface-container-highest text-primary px-10 py-4 rounded-xl text-lg font-semibold transition-transform hover:scale-105"
+  onclick="document.getElementById('suites').scrollIntoView({behavior: 'smooth'})">
+  View Our Suites
+</button></div>
+</div>
+<div class="relative group">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 grid grid-cols-2 gap-4">
+<div class="pt-12">
+<img class="w-full h-80 object-cover rounded-xl editorial-shadow" data-alt="Golden retriever smiling happily in outdoor garden" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="space-y-4">
+<img class="w-full h-64 object-cover rounded-xl editorial-shadow" data-alt="Cat relaxing on a luxury velvet pet bed" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+<div class="bg-primary p-6 rounded-xl text-on-primary">
+<span class="material-symbols-outlined text-4xl mb-2" data-weight="fill">Luxury</span>
+<p class="font-headline text-xl italic">"The gold standard in pet hospitality."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Introduction Section -->
+<section class="bg-surface-container-low py-32 px-8 overflow-hidden">
+<div class="max-w-4xl mx-auto text-center relative">
+<div class="font-headline text-4xl md:text-5xl text-primary mb-12 leading-loose">
+                   More than a resort, we are a <span class="text-tertiary">Sanctuary</span> built on decades of <span class="text-tertiary">passion</span> and five <span class="text-tertiary">acres </span>of land
+</div>
+<div class="grid md:grid-cols-2 gap-12 text-left">
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        At Kingwood pet resort, we believe every pet deserves a vacation as refined as their owners. Founded with the vision of blending rustic charm with high-end care, we’ve spent years perfecting the balance between professional supervision and heartfelt affection. Every pet has a private space free from any bothersome neighbors
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                       Our facility is meticulously maintained to provide a safe, sanitary, flea-free, and serene environment, from our spacious exercise fields, climate-controlled boarding suites, to our 24-hour webcam access. Every inch of Kingwood Pet Resort is curated for pet Wellness and owner Peace of Mind
+                    </p>
+</div>
+</div>
+</section>
+<!-- Services Grid (Bento Style) -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div>
+<h2 class="font-headline text-4xl lg:text-5xl text-primary mb-4">Our Personal Pet Services</h2>
+<p class="text-on-surface-variant text-xl max-w-lg">Care packages tailored to your pet's personality.</p>
+<p class="text-on-surface-variant text-xl max-w-lg">Individual playtime, treats, beds, orthopedic beds on request, and lots of love</p>
+</div>
+<a class="text-primary font-semibold flex items-center gap-2 group" href="Reservations.html">
+                    Explore all services 
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Day Kamp -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl overflow-hidden group editorial-shadow">
+<div class="flex flex-col h-full">
+<div class="relative overflow-hidden h-64 md:h-80">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Group of diverse dogs playing together in a grassy field" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+<div class="absolute top-4 right-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-primary flex items-center gap-1">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span> LIVE STATUS: ACTIVE
+                            </div>
+</div>
+<div class="p-10 grow">
+<h3 class="font-headline text-3xl text-primary mb-4">Pet Resort Day Stay</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed max-w-lg">Interactive play, supervised social time, and plenty of room to run in our secure outdoor play zones. Perfect for high energy friends.</p>
+<button class="text-primary font-bold border-b-2 border-primary/20 pb-1 hover:border-primary transition-colors">Join the Resort</button>
+</div>
+</div>
+</div>
+<!-- Grooming -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl overflow-hidden group editorial-shadow">
+<div class="flex flex-col h-full">
+<div class="relative overflow-hidden h-64 md:h-80">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A small white dog being brushed gently by a groomer" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="p-10 grow">
+<h3 class="font-headline text-3xl text-primary mb-4">Baths &amp; Grooming</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">A full-service spa experience, including premium baths, nail trims, and breed-specific styling, all provided by a very experienced groomer who loves to pamper your pet.</p>
+<button class="text-primary font-bold border-b-2 border-primary/20 pb-1 hover:border-primary transition-colors">Book a Spa Day</button>
+</div>
+</div>
+</div>
+<!-- Boarding -->
+<div id="suites" class="md:col-span-12 bg-primary text-on-primary rounded-xl overflow-hidden flex flex-col md:flex-row editorial-shadow">
+<div class="md:w-1/2 p-12 md:p-16 flex flex-col justify-center">
+<div class="mb-6 inline-flex items-center gap-2 text-secondary-fixed">
+<span class="font-bold tracking-widest text-sm uppercase">Resort Luxury Accommodations</span>
+</div>
+<h3 class="font-headline text-4xl md:text-5xl mb-6">Boarding &amp; Private Suites</h3>
+<p class="text-on-primary-container text-lg mb-10 leading-relaxed"> Every standard kennel is indoor/outdoor with privacy walls between each run. Our VIP luxury suites are large 8-by-8 rooms with 8-by-10 private outdoor run access via a climate-controlled door. We strive to provide a quiet, safe, and restful night for your pets. Personalized bedding and gourmet treats included.</p>
+<div>
+<button onclick="window.location.href='https://kingwoodpetresort.propetware.com/'" class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold transition-transform hover:scale-105"> Reserve a Suite</button>
+</div>
+</div>
+<div class="md:w-1/2 relative min-h-75">
+<img class="w-full h-full object-cover" data-alt="A clean modern indoor pet suite with comfortable bed" src="images/Shrek.jpg" alt="PLACEHOLDER">
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-high py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl text-primary mb-4">Voices from our Community</h2>
+<p class="text-on-surface-variant">Trusted by pet parents in Kingwood and beyond.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-surface rounded-2xl p-10 editorial-shadow">
+<div class="text-tertiary mb-6">
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+</div>
+<p class="italic text-lg text-on-surface mb-8">"Kris and the team treat my lab like family. He literally pulls me towards the door every time we arrive for Day Kamp. Best care in the city."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container">K</div>
+<div>
+<p class="font-bold text-primary">Kris M.</p>
+<p class="text-sm text-on-surface-variant">Pet Parent</p>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-2xl p-10 editorial-shadow">
+<div class="text-tertiary mb-6">
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+</div>
+<p class="italic text-lg text-on-surface mb-8">"The luxury suites are incredible. I never worry about my senior cat when I'm away because I know she's in a peaceful, climate-controlled space."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center font-bold text-on-primary-container text-white">F</div>
+<div>
+<p class="font-bold text-primary">Fran R.</p>
+<p class="text-sm text-on-surface-variant">Cat Owner</p>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-2xl p-10 editorial-shadow">
+<div class="text-tertiary mb-6">
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+<span class="material-symbols-outlined" data-weight="fill">grade</span>
+</div>
+<p class="italic text-lg text-on-surface mb-8">"Excellent grooming service. Quinn came back looking like a champion and smelled wonderful for weeks. Highly recommended!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">Q</div>
+<div>
+<p class="font-bold text-primary">Quinn D.</p>
+<p class="text-sm text-on-surface-variant">Grooming Client</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Gallery -->
+<section class="py-32 px-8 max-w-7xl mx-auto overflow-hidden">
+<h2 class="font-headline text-4xl text-primary text-center mb-16">Moments of Pet Love</h2>
+<div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Small dog jumping with joy on grass" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-end p-4">
+<span class="text-white text-xs font-bold uppercase tracking-widest">#DayKampLife</span>
+</div>
+</div>
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Two puppies napping together" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Corgi wearing a bandana smiling" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Close up of a cute pug face" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Labrador fetching a tennis ball" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+<div class="break-inside-avoid relative group">
+<img class="w-full rounded-xl transition-transform group-hover:scale-[1.02]" data-alt="Cat playing with a toy" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+</div>
+</div>
+</section>
+<!-- Contact & Info Section -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+<div class="bg-surface-container-lowest p-12 rounded-2xl editorial-shadow">
+<h2 class="font-headline text-3xl text-primary mb-10">Plan Your Visit</h2>
+<div class="space-y-12">
+<div>
+<div class="flex items-center gap-3 text-secondary mb-3">
+<span class="font-bold tracking-wider text-sm uppercase">Our Location</span>
+</div>
+<p class="text-xl text-on-surface leading-relaxed">
+                                619 Lakeville Dr<br/>
+                                Kingwood, TX 77339
+                            </p>
+</div>
+<div>
+<div class="flex items-center gap-3 text-secondary mb-3">
+<span class="font-bold tracking-wider text-sm uppercase">Hours of Operation</span>
+</div>
+<ul class="space-y-2 text-on-surface">
+<li class="flex justify-between"><span>Monday - Friday</span> <span>8:00 AM - 12:00 PM</span><span>2:00 PM - 6:00 PM</span></li>
+<li class="flex justify-between"><span>Saturday</span> <span>8:00 AM - 2:00 PM</span></li>
+<li class="flex justify-between"><span>Sunday</span> <span>3:00 PM - 6:00 PM</span></li>
+</ul>
+</div>
+<div>
+<div class="flex items-center gap-3 text-secondary mb-3">
+<span class="font-bold tracking-wider text-sm uppercase">Service Areas</span>
+</div>
+<p class="text-on-surface-variant">Proudly serving Kingwood, Humble, Atascocita, Porter, and the Greater Houston area.</p>
+</div>
+</div>
+</div>
+<div class="relative min-h-125 rounded-2xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Aerial view of Kingwood Texas landscape" data-location="Kingwood, Texas" src="images/Shrek.jpg" alt="PLACEHOLDER"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-grayscale-[0.5]"></div>
+<div class="absolute bottom-10 left-10 right-10 bg-white p-6 rounded-xl shadow-2xl flex items-center justify-between">
+<div>
+<p class="font-bold text-primary">Kingwood Pet Resort</p>
+<p class="text-sm text-on-surface-variant">25222 Loop 494, Kingwood, TX</p>
+</div>
+<button onclick="window.open('https://www.google.com/maps/search/?api=1&query=619+Lakeville+Dr+Kingwood+TX', '_blank', 'noopener,noreferrer')" class="bg-primary text-white p-3 rounded-full flex items-center justify-center">
+  <span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-teal-950 text-teal-100 w-full mt-auto border-t border-white/10">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+    
+    <!-- Brand & Description -->
+    <div class="md:col-span-2">
+      <div class="font-headline text-2xl font-bold text-white mb-4">
+        Kingwood Pet Resort
+      </div>
+      <p class="text-teal-200/80 text-base leading-relaxed max-w-md">
+        A curated sanctuary nestled in nature, offering holistic wellness, luxury boarding, and artisanal grooming for your pets.
+      </p>
+    </div>
+
+    <!-- Links Columns -->
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Resort</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="grooming.html" class="hover:text-white transition-colors">Grooming</a></li>
+          <li><a href="reservations.html" class="hover:text-white transition-colors">Reservations</a></li>
+          <li><a href="feedback.html" class="hover:text-white transition-colors">Feedback</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Legal & Bottom -->
+    <div class="space-y-8">
+      <div class="text-sm text-teal-200/70 mt-8">
+        © 2025 Kingwood Pet Resort. All rights reserved.<br/>
+        <span class="inline-flex items-center gap-1 mt-2">
+      </div>
+    </div>
+  </div>
+</footer></body></html>
