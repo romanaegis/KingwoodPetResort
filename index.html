@@ -96,59 +96,42 @@
 
     <!-- Desktop Links -->
     <div class="hidden md:flex items-center gap-10">
-      <a href="about.html" 
-         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
-                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
-        About Us
-      </a>
-      <a href="grooming.html" 
-         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
-                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
-        Grooming
-      </a>
-      <a href="reservations.html" 
-         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
-                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
-        Reservations
-      </a>
-      <a href="feedback.html" 
-         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
-                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
-        Feedback
-      </a>
-      <a href="contact.html" 
-         class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors
-                data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">
-        Contact
-      </a>
+      <a href="about.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">About Us</a>
+      <a href="grooming.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">Grooming</a>
+      <a href="reservations.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">Reservations</a>
+      <a href="feedback.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">Feedback</a>
+      <a href="contact.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:pb-1">Contact</a>
     </div>
 
-    <a href="https://kingwoodpetresort.propetware.com/" 
-       class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container 
-              text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 
-              active:scale-[0.98] transition-all duration-200">
+    <a href="https://kingwoodpetresort.propetware.com/" class="hidden md:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 active:scale-[0.98] transition-all duration-200">
       Book a Stay
     </a>
 
-<!-- Mobile menu button -->
-<button 
-  class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors"
-  onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('mobile-menu').classList.toggle('hidden')"
-  aria-expanded="false"
-  aria-controls="mobile-menu">
-  <span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-btn"
+      class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors"
+      onclick="
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        this.querySelector('.material-symbols-outlined').textContent = expanded ? 'menu' : 'close';
+      "
+      aria-expanded="false"
+      aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
 
-<!-- Mobile Dropdown Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-surface-container-low shadow-lg">
-  <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
-    <a href="about.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">About Us</a>
-    <a href="grooming.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Grooming</a>
-    <a href="reservations.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Reservations</a>
-    <a href="feedback.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Feedback</a>
-    <a href="contact.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Contact</a>
-</div>
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-surface-container-low shadow-lg relative z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+      <a href="about.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">About Us</a>
+      <a href="grooming.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Grooming</a>
+      <a href="reservations.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Reservations</a>
+      <a href="feedback.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Feedback</a>
+      <a href="contact.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Contact</a>
+    </nav>
+  </div>
 
 </nav>
 <main class="pt-20">
