@@ -130,11 +130,26 @@
       Book a Stay
     </a>
 
-    <!-- Mobile menu button (placeholder) -->
-    <button class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors">
-      <span class="material-symbols-outlined text-3xl">menu</span>
-    </button>
-  </div>
+<!-- Mobile menu button -->
+<button 
+  class="md:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors"
+  onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('mobile-menu').classList.toggle('hidden')"
+  aria-expanded="false"
+  aria-controls="mobile-menu">
+  <span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+
+<!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-surface-container-lowest border-t border-surface-container-low shadow-lg">
+  <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+    <a href="#about" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">About Us</a>
+    <a href="#grooming" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Grooming</a>
+    <a href="#reservations" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Reservations</a>
+    <a href="#feedback" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Feedback</a>
+    <a href="#contact" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Contact</a>
+</div>
+
 </nav>
 <main class="pt-20">
 <!-- Hero Section -->
