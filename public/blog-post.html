@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kingwood Pet Resort | The Resort Journal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#083642',
+            'primary-container': '#254d59',
+            'on-primary': '#ffffff',
+            'on-primary-container': '#95bdcb',
+            secondary: '#516530',
+            'secondary-container': '#d0e9a5',
+            'on-secondary-container': '#556933',
+            'on-secondary': '#ffffff',
+            tertiary: '#492b07',
+            'tertiary-container': '#62411c',
+            'on-tertiary-container': '#ddae80',
+            'on-tertiary': '#ffffff',
+            background: '#fbf9f8',
+            surface: '#fbf9f8',
+            'surface-container-lowest': '#ffffff',
+            'surface-container-low': '#f6f3f2',
+            'surface-container': '#f0eded',
+            'surface-container-high': '#eae8e7',
+            'surface-container-highest': '#e4e2e1',
+            'on-surface': '#1b1c1c',
+            'on-surface-variant': '#41484b',
+            'on-background': '#1b1c1c',
+            outline: '#71787b',
+            'outline-variant': '#c1c8cb',
+            error: '#ba1a1a',
+          },
+          fontFamily: {
+            headline: ['Noto Serif', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            label: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow { box-shadow: 0 20px 32px -8px rgba(8, 54, 66, 0.06); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease both; }
+    .fade-up-1 { animation-delay: 0.1s; }
+    .fade-up-2 { animation-delay: 0.2s; }
+    .fade-up-3 { animation-delay: 0.3s; }
+
+    .prose-body p {
+      color: #41484b;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+    <a href="/index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
+      Kingwood <span class="text-secondary italic">Pet Resort</span>
+    </a>
+    <div class="hidden lg:flex items-center gap-10">
+      <a href="/about.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">About Us</a>
+      <a href="/grooming.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Grooming</a>
+      <a href="/reservations.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Reservations</a>
+      <a href="/feedback.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Feedback</a>
+      <a href="/contact.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+      <a href="/blog.html" class="font-body text-lg font-medium text-primary border-b-2 border-secondary transition-colors">Journal</a>
+    </div>
+    <a href="https://kingwoodpetresort.propetware.com/" class="hidden lg:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 active:scale-[0.98] transition-all duration-200">
+      Book a Stay
+    </a>
+    <button id="mobile-menu-btn"
+      class="lg:hidden text-primary p-2 rounded-lg hover:bg-surface-container-low transition-colors"
+      onclick="const expanded = this.getAttribute('aria-expanded') === 'true'; this.setAttribute('aria-expanded', !expanded); document.getElementById('mobile-menu').classList.toggle('hidden'); this.querySelector('.material-symbols-outlined').textContent = expanded ? 'menu' : 'close';"
+      aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden bg-surface-container-lowest border-t border-surface-container-low shadow-lg relative z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+      <a href="/about.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">About Us</a>
+      <a href="/grooming.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Grooming</a>
+      <a href="/reservations.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Reservations</a>
+      <a href="/feedback.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Feedback</a>
+      <a href="/contact.html" class="text-on-surface hover:text-primary hover:bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Contact</a>
+      <a href="/blog.html" class="text-primary bg-surface-container-low px-4 py-3 rounded-lg transition-colors font-medium">Journal</a>
+      <a href="https://kingwoodpetresort.propetware.com/" class="mt-2 text-center bg-gradient-to-br from-primary to-primary-container text-on-primary px-4 py-3 rounded-lg font-medium">Book a Stay</a>
+    </nav>
+  </div>
+</nav>
+
+<main class="pt-24">
+
+  <!-- Loading -->
+  <div id="loading-state" class="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+    <div class="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+    <p class="text-on-surface-variant font-body">Loading article...</p>
+  </div>
+
+  <!-- Error -->
+  <div id="error-state" class="hidden flex-col items-center justify-center min-h-[60vh] gap-4 text-center px-6">
+    <span class="material-symbols-outlined text-5xl text-outline">error_outline</span>
+    <p class="font-headline text-2xl text-primary">Article not found</p>
+    <p class="text-on-surface-variant">This article may have been removed or the link is incorrect.</p>
+    <a href="/blog.html" class="mt-4 inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary-container transition-colors">
+      <span class="material-symbols-outlined">arrow_back</span> Back to Journal
+    </a>
+  </div>
+
+  <!-- Article Content -->
+  <article id="article-content" class="hidden">
+
+    <!-- Hero Image -->
+    <div id="hero-image-container" class="hidden w-full h-72 md:h-96 overflow-hidden">
+      <img id="hero-image" src="" alt="" class="w-full h-full object-cover"/>
+    </div>
+
+    <!-- Article Body -->
+    <div class="max-w-3xl mx-auto px-6 md:px-8 py-16">
+
+      <!-- Back link -->
+      <a href="/blog.html" class="inline-flex items-center gap-2 text-secondary font-medium hover:text-primary transition-colors mb-10 fade-up fade-up-1">
+        <span class="material-symbols-outlined text-lg">arrow_back</span>
+        Back to Journal
+      </a>
+
+      <!-- Tags -->
+      <div id="tags-container" class="flex flex-wrap gap-2 mb-6 fade-up fade-up-1"></div>
+
+      <!-- Title -->
+      <h1 id="post-title" class="font-headline text-3xl md:text-5xl text-primary leading-tight mb-6 fade-up fade-up-2"></h1>
+
+      <!-- Meta -->
+      <div class="flex flex-wrap items-center gap-6 pb-8 mb-10 border-b border-outline-variant/30 fade-up fade-up-2">
+        <div class="flex items-center gap-2 text-sm text-outline">
+          <span class="material-symbols-outlined text-base">calendar_today</span>
+          <span id="post-date"></span>
+        </div>
+        <div id="source-name-container" class="hidden flex items-center gap-2 text-sm text-secondary font-medium">
+          <span class="material-symbols-outlined text-base">feed</span>
+          <span id="post-source"></span>
+        </div>
+      </div>
+
+      <!-- Summary / Body -->
+      <div id="post-body" class="prose-body fade-up fade-up-3"></div>
+
+      <!-- Read Original -->
+      <div id="source-link-container" class="hidden mt-12 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/30 fade-up">
+        <p class="text-sm text-on-surface-variant mb-3 font-medium">Read the original article</p>
+        <a id="source-link" href="#" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors break-all">
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+          <span id="source-url-text"></span>
+        </a>
+      </div>
+
+      <!-- Nav between posts -->
+      <div class="flex justify-between mt-16 pt-8 border-t border-outline-variant/30">
+        <a href="/blog.html" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-200">
+          <span class="material-symbols-outlined">arrow_back</span>
+          All Articles
+        </a>
+        <a href="https://kingwoodpetresort.propetware.com/" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-semibold rounded-xl hover:opacity-95 transition-all duration-200">
+          Book a Stay
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-teal-950 text-teal-100 w-full mt-auto border-t border-white/10">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <div class="font-headline text-2xl font-bold text-white mb-4">Kingwood Pet Resort</div>
+      <p class="text-teal-200/80 text-base leading-relaxed max-w-md">A curated sanctuary nestled in nature, offering holistic wellness, luxury boarding, and artisanal grooming for your pets.</p>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-white font-medium text-sm uppercase tracking-wider mb-4">Resort</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="/grooming.html" class="hover:text-white transition-colors">Grooming</a></li>
+          <li><a href="/reservations.html" class="hover:text-white transition-colors">Reservations</a></li>
+          <li><a href="/feedback.html" class="hover:text-white transition-colors">Feedback</a></li>
+          <li><a href="/contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="/blog.html" class="hover:text-white transition-colors">Journal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="space-y-8">
+      <div class="text-sm text-teal-200/70 mt-8">© 2025 Kingwood Pet Resort. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const API_BASE = 'https://w7019k96u4.execute-api.us-east-1.amazonaws.com/dev';
+
+  function formatDate(iso) {
+    try {
+      return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch { return ''; }
+  }
+
+  function getTagColor(tag) {
+    const colors = {
+      'grooming': 'bg-secondary-container text-on-secondary-container',
+      'health': 'bg-blue-100 text-blue-800',
+      'training': 'bg-amber-100 text-amber-800',
+      'nutrition': 'bg-green-100 text-green-800',
+      'boarding': 'bg-teal-100 text-teal-800',
+    };
+    return colors[(tag||'').toLowerCase()] || 'bg-surface-container text-on-surface-variant';
+  }
+
+  async function loadPost() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (!id) {
+      showError();
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/posts/${id}`);
+      if (!res.ok) throw new Error('Not found');
+      const post = await res.json();
+      renderPost(post);
+    } catch (err) {
+      console.error(err);
+      showError();
+    }
+  }
+
+  function showError() {
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('error-state').style.display = 'flex';
+  }
+
+  function renderPost(post) {
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('article-content').style.display = 'block';
+    document.getElementById('article-content').classList.remove('hidden');
+
+    // Update page title
+    document.title = `${post.title} | Kingwood Pet Resort Journal`;
+
+    // Hero image
+    if (post.imageUrl) {
+      document.getElementById('hero-image').src = post.imageUrl;
+      document.getElementById('hero-image').alt = post.title;
+      document.getElementById('hero-image-container').classList.remove('hidden');
+    }
+
+    // Tags
+    const tags = Array.isArray(post.tags) ? post.tags : (post.tags ? [post.tags] : []);
+    if (tags.length > 0) {
+      document.getElementById('tags-container').innerHTML = tags.map(t =>
+        `<span class="px-3 py-1 rounded-full text-xs font-semibold ${getTagColor(t)}">${t}</span>`
+      ).join('');
+    }
+
+    // Title & date
+    document.getElementById('post-title').textContent = post.title;
+    document.getElementById('post-date').textContent = formatDate(post.publishedAt);
+
+    // Source name
+    if (post.sourceName) {
+      document.getElementById('post-source').textContent = post.sourceName;
+      document.getElementById('source-name-container').classList.remove('hidden');
+      document.getElementById('source-name-container').style.display = 'flex';
+    }
+
+    // Body — render paragraphs
+    const paragraphs = post.summary.split('\n').filter(p => p.trim());
+    document.getElementById('post-body').innerHTML = paragraphs
+      .map(p => `<p>${p}</p>`)
+      .join('');
+
+    // Source link
+    if (post.sourceUrl) {
+      document.getElementById('source-link').href = post.sourceUrl;
+      document.getElementById('source-url-text').textContent = post.sourceUrl;
+      document.getElementById('source-link-container').classList.remove('hidden');
+      document.getElementById('source-link-container').style.display = 'block';
+    }
+  }
+
+  loadPost();
+</script>
+</body>
+</html>
