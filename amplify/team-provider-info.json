@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kingwoodpetresort-dev-98976-authRole",
+      "UnauthRoleArn": "arn:aws:iam::561226080631:role/amplify-kingwoodpetresort-dev-98976-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::561226080631:role/amplify-kingwoodpetresort-dev-98976-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-kingwoodpetresort-dev-98976-deployment",
+      "UnauthRoleName": "amplify-kingwoodpetresort-dev-98976-unauthRole",
+      "StackName": "amplify-kingwoodpetresort-dev-98976",
+      "StackId": "arn:aws:cloudformation:us-east-1:561226080631:stack/amplify-kingwoodpetresort-dev-98976/32efbd90-3869-11f1-96ff-0affdaf9f2c5",
+      "AmplifyAppId": "dz1acbhjewzgq"
+    },
+    "categories": {
+      "function": {
+        "blogFunction": {
+          "blogApiSecret": "n8nBlogSecret2026!KingwoodPetResort",
+          "deploymentBucketName": "amplify-kingwoodpetresort-dev-98976-deployment",
+          "s3Key": "amplify-builds/blogFunction-627a6d79444a5959636b-build.zip"
+        }
+      },
+      "api": {
+        "blogapi": {}
+      },
+      "storage": {
+        "blogTable": {}
+      }
+    }
+  }
+}
