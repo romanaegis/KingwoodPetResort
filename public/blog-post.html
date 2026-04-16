@@ -7,6 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@0..1,100..700,0..1&display=swap" rel="stylesheet"/>
+  
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
   <script>
@@ -144,11 +145,12 @@
     <div class="max-w-3xl mx-auto px-6 md:px-8 py-16">
 
       <!-- Back link -->
-      <a href="/blog.html" class="inline-flex items-center gap-2 text-secondary font-medium hover:text-primary transition-colors mb-10 fade-up fade-up-1">
-        <span class="material-symbols-outlined text-lg">arrow_back</span>
+<a href="/blog.html" class="inline-flex items-center gap-2 text-secondary font-medium hover:text-primary transition-colors mb-10 fade-up fade-up-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
         Back to Journal
       </a>
-
       <!-- Tags -->
       <div id="tags-container" class="flex flex-wrap gap-2 mb-6 fade-up fade-up-1"></div>
 
@@ -183,12 +185,12 @@
       <!-- Nav between posts -->
       <div class="flex justify-between mt-16 pt-8 border-t border-outline-variant/30">
         <a href="/blog.html" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-200">
-          <span class="material-symbols-outlined">arrow_back</span>
-          All Articles
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>          All Articles
         </a>
         <a href="https://kingwoodpetresort.propetware.com/" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-semibold rounded-xl hover:opacity-95 transition-all duration-200">
           Book a Stay
-          <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
     </div>

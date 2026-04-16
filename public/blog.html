@@ -235,7 +235,7 @@
 
 const imageHtml = post.imageUrl
   ? `<img src="${post.imageUrl}" alt="${post.title}" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"/>`
-: `<div class="w-full h-32 bg-gradient-to-br from-primary to-primary-container p-6 flex items-end relative overflow-hidden">
+: `<div class="w-full h-32 bg-gradient-to-br from-primary to-primary-container p-6 flex items-start relative overflow-hidden">
        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #516530 0%, transparent 60%), radial-gradient(circle at 80% 20%, #95bdcb 0%, transparent 50%);"></div>
        <h3 class="relative z-10 text-white font-headline text-2xl leading-snug">${post.title}</h3>
      </div>`;
