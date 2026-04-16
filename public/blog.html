@@ -81,13 +81,13 @@
     <a href="/index.html" class="font-headline text-2xl md:text-3xl font-bold text-primary tracking-tight">
       Kingwood <span class="text-secondary italic">Pet Resort</span>
     </a>
-    <div class="hidden lg:flex items-center gap-10">
-      <a href="/about.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">About Us</a>
-      <a href="/grooming.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Grooming</a>
-      <a href="/reservations.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Reservations</a>
-      <a href="/feedback.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Feedback</a>
-      <a href="/contact.html" class="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors">Contact</a>
-      <a href="/blog.html" class="font-body text-lg font-medium text-primary border-b-2 border-secondary transition-colors">Journal</a>
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="/about.html" class="font-body text-base font-medium text-on-surface-variant hover:text-primary transition-colors">About Us</a>
+      <a href="/grooming.html" class="font-body text-base font-medium text-on-surface-variant hover:text-primary transition-colors">Grooming</a>
+      <a href="/reservations.html" class="font-body text-base font-medium text-on-surface-variant hover:text-primary transition-colors">Reservations</a>
+      <a href="/feedback.html" class="font-body text-base font-medium text-on-surface-variant hover:text-primary transition-colors">Feedback</a>
+      <a href="/contact.html" class="font-body text-base font-medium text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+      <a href="/blog.html" class="font-body text-base font-medium text-primary border-b-2 border-secondary transition-colors">Journal</a>
     </div>
     <a href="https://kingwoodpetresort.propetware.com/" class="hidden lg:inline-flex items-center px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-medium rounded-xl shadow-md hover:shadow-lg hover:opacity-95 active:scale-[0.98] transition-all duration-200">
       Book a Stay
@@ -259,7 +259,6 @@ const imageHtml = post.imageUrl
           <p class="text-on-surface-variant text-sm leading-relaxed line-clamp-3">${post.summary}</p>
           <div class="flex items-center justify-between pt-2 border-t border-outline-variant/30">
             <div class="flex items-center gap-2 text-xs text-outline">
-              <span class="material-symbols-outlined text-base">calendar_today</span>
               <span>${formatDate(post.publishedAt)}</span>
             </div>
             ${post.sourceName ? `<span class="text-xs text-secondary font-medium">${post.sourceName}</span>` : ''}
