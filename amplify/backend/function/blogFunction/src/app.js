@@ -117,6 +117,21 @@ app.post('/posts', requireApiKey, async (req, res) => {
       return res.status(400).json({ error: 'title, summary, and sourceUrl are required' });
     }
 
+    // ── Duplicate check ──────────────────────────────────────────────────────
+    const existing = await docClient.send(
+      new ScanCommand({
+        TableName: TABLE_NAME,
+        FilterExpression: 'sourceUrl = :url',
+        ExpressionAttributeValues: { ':url': sourceUrl },
+        Limit: 1,
+      })
+    );
+
+    if (existing.Items && existing.Items.length > 0) {
+      return res.status(200).json({ skipped: true, message: 'Article already exists' });
+    }
+    // ────────────────────────────────────────────────────────────────────────
+
     const post = {
       id: uuidv4(),
       title,
