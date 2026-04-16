@@ -16,7 +16,7 @@
         "blogFunction": {
           "blogApiSecret": "n8nBlogSecret2026!KingwoodPetResort",
           "deploymentBucketName": "amplify-kingwoodpetresort-dev-98976-deployment",
-          "s3Key": "amplify-builds/blogFunction-627a6d79444a5959636b-build.zip"
+          "s3Key": "amplify-builds/blogFunction-37684444756e6f495156-build.zip"
         }
       },
       "api": {
