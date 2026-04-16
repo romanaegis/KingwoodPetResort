@@ -18,6 +18,14 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, x-api-key');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  if (req.method === 'OPTIONS') return res.sendStatus(200);
+  next();
+});
+
 const TABLE_NAME = process.env.STORAGE_BLOGTABLE_NAME || 'BlogPosts';
 const API_SECRET = process.env.BLOG_API_SECRET; // set this in Amplify env vars
 
