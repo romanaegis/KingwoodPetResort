@@ -235,11 +235,11 @@
 
 const imageHtml = post.imageUrl
   ? `<img src="${post.imageUrl}" alt="${post.title}" class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"/>`
-: `<div class="w-full h-52 bg-gradient-to-br from-primary to-primary-container p-6 flex items-end relative overflow-hidden">
+: `<div class="w-full h-32 bg-gradient-to-br from-primary to-primary-container p-6 flex items-end relative overflow-hidden">
        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #516530 0%, transparent 60%), radial-gradient(circle at 80% 20%, #95bdcb 0%, transparent 50%);"></div>
        <h3 class="relative z-10 text-white font-headline text-2xl leading-snug">${post.title}</h3>
      </div>`;
-          
+
     const delay = (index % 3) * 100;
 
     return `
@@ -253,7 +253,7 @@ const imageHtml = post.imageUrl
           <div class="flex items-center gap-2 flex-wrap">
             ${tagsHtml}
           </div>
-          <h2 class="font-headline text-xl text-primary leading-snug group-hover:text-primary-container transition-colors line-clamp-2">
+          <h2 class="font-headline text-xl text-primary leading-snug group-hover:text-primary-container transition-colors line-clamp-2 hidden">
             ${post.title}
           </h2>
           <p class="text-on-surface-variant text-sm leading-relaxed line-clamp-3">${post.summary}</p>
